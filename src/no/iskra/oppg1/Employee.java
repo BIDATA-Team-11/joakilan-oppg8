@@ -45,6 +45,18 @@ class Employee {
     return calendar.get(Calendar.YEAR) - this.emplyeeSince;
   }
 
+  public void setAnnualSalary(float salary) {
+    this.monthlySalary = salary / 12;
+  }
+
+  public void setMonthlySalary(float salary) {
+    this.monthlySalary = salary;
+  }
+
+  public void setTax(float tax) {
+    this.tax = tax;
+  }
+
   public bool hasBeenEmployedForXYears(int years) {
     return this.getYearsSinceEmployed() > years ? true : false;
   }
