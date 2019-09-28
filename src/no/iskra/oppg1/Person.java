@@ -5,15 +5,15 @@ final class Person {
   final String lastName;
   final int birthYear;
 
-  Person(String firstName, String lantName, int birthYear) {
+  Person(String firstName, String lastName, int birthYear) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthYear = birthYear;
   }
 
-  public String getFirstName() { return firstName; }
+  public String getFirstName() { return this.firstName; }
 
-  public String getLastName() { return lastName; }
+  public String getLastName() { return this.lastName; }
 
-  public int getBirthYear() { return birthYear; }
+  public int getBirthyear() { return this.birthYear; }
 }

@@ -26,23 +26,39 @@ class Employee {
   }
 
   public float getAnnualSalary() {
-    return this.monthlySalary * 12;
+    return this.monthlySalary * 12f;
   }
 
   public float getAnnualTax() {
-    return this.getMonthlyTax() * 10.5;
+    return this.getMonthlyTax() * 10.5f;
+  }
+
+  public float getTaxPercent() {
+    return this.tax;
   }
 
   public String getFullName() {
     return String.format("%s, %s", person.getLastName(), person.getFirstName());
   }
 
+  public int getID() {
+    return this.employeeID;
+  }
+
+  public int getBirthyear() {
+    return this.person.getBirthyear();
+  }
+
   public int getAge() {
-    return calendar.get(Calendar.YEAR) - person.getBirthYear();
+    return calendar.get(Calendar.YEAR) - person.getBirthyear();
   }
 
   public int getYearsSinceEmployed() {
     return calendar.get(Calendar.YEAR) - this.emplyeeSince;
+  }
+
+  public int getEmployeeSince() {
+    return this.emplyeeSince;
   }
 
   public void setAnnualSalary(float salary) {
@@ -57,7 +73,7 @@ class Employee {
     this.tax = tax;
   }
 
-  public bool hasBeenEmployedForXYears(int years) {
+  public boolean hasBeenEmployedForXYears(int years) {
     return this.getYearsSinceEmployed() > years ? true : false;
   }
 }
