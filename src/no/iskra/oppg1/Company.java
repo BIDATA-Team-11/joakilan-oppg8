@@ -40,4 +40,8 @@ class Company {
   public String employeeToShortString(int id) {
     return "%n";
   }
+
+  public Employee getEmployeeByID(int id) {
+    return employees.get(id);
+  }
 }
