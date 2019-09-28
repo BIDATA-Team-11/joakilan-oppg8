@@ -39,6 +39,8 @@ class TerminalClient {
       } else if (command[0].equals("list")) {
         System.out.println();
         System.out.println(company.listEmployeesFull());
+      } else if (command[0].equals("new")) {
+        addNewEmployee(cmd, company);
       } else {
         System.out.println("Invalid command. Type 'help' for usage.");
       }
@@ -74,10 +76,34 @@ class TerminalClient {
     }
   }
 
+  static void addNewEmployee(Scanner cmd, Company company) {
+    try {
+      System.out.println("Add new employee");
+      System.out.printf("%nGiven name > ");
+      String name = cmd.nextLine();
+      System.out.printf("%nSurname > ");
+      String surname = cmd.nextLine();
+      System.out.printf("%nBirthyear > ");
+      int birthyear = Integer.parseInt(cmd.nextLine());
+      System.out.printf("%nGross annual salary > ");
+      float salary = Float.parseFloat(cmd.nextLine());
+      System.out.printf("%nTax percentage > ");
+      float tax = Float.parseFloat(cmd.nextLine());
+      System.out.printf("%nEmployed (year) > ");
+      int employeeSince = Integer.parseInt(cmd.nextLine());
+
+      company.addNewEmployee(name, surname, birthyear, salary, tax, employeeSince);
+    } catch(Exception e) {
+      System.out.println("Invalid input. Aborted.");
+    }
+
+    System.out.println("New employee successflly added.");
+  }
+
   static void mainMenuHelp() {
     System.out.printf("%n%-17s%s%n", "list", "List all emplyees");
     System.out.printf("%-17s%s%n", "id [employee ID]", "Select an employee by ID");
-    System.out.printf("%-17s%s%n", "new", "Add new employee (not implemented)");
+    System.out.printf("%-17s%s%n", "new", "Add new employee");
     System.out.printf("%-17s%s%n", "exit", "Quit program");
     System.out.printf("%-17s%s%n", "help", "Display this text");
   }
