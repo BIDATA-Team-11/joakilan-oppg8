@@ -37,16 +37,6 @@ class Company {
     return list;
   }
 
-  public String employeeToString(int id) {
-    Employee emp = employees.get(id);
-    System.out.println(emp.getFullName());
-    String headerFmt = "%-20s%-10s%-9s%-7s%-12s%-11s%n";
-    String employeeFmt = "%-20s%-10d%-9d%-7.2f%-12.2f%-11.2f%n";
-    String header = String.format(headerFmt, "Name", "Birthyear", "Employed", "Tax %", "Salary (A)", "Salary (M)");
-    String employeeString = String.format(employeeFmt, emp.getFullName(), emp.getBirthyear(), emp.getEmployeeSince(), emp.getTaxPercent(), emp.getAnnualSalary(), emp.getAnnualSalary()/12);
-    return header+employeeString;
-  }
-
   public String employeeToShortString(int id) {
     return "%n";
   }

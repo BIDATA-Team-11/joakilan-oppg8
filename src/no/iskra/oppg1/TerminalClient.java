@@ -24,7 +24,9 @@ class TerminalClient {
       } else if (command[0].equals("help")) {
         terminalHelp();
       } else if (command[0].equals("list")) {
-        company.listEmployeesFull();
+        System.out.println(company.listEmployeesFull());
+      } else {
+        System.out.println("Invalid command. Type 'help' for usage.");
       }
     }
   }
