@@ -48,6 +48,7 @@ class TerminalClient {
   static void employeeDetailsLoop(Scanner cmd, Employee employee) {
     String[] command;
     System.out.printf("%nSelected employee %s%n", employee.getFullName());
+    employeeDetailsHelp();
     while (true) {
       System.out.printf("%nEmployee %d > ", employee.getID());
       command = cmd.nextLine().toLowerCase().split("\\s");
@@ -66,6 +67,9 @@ class TerminalClient {
           System.out.printf("%-22s%.2fKr%n", "Annual tax: ", employee.getAnnualTax());
           System.out.printf("%-22s%.2fKr%n", "Monthly tax: ", employee.getMonthlyTax());
         }
+      } else if (command[0].equals("details")) {
+        System.out.printf("%n%-11s%s%n", "Full name: ", employee.getFullName());
+        System.out.printf("%-11s%d%n", "Birthyear: ", employee.getBirthyear());
       }
     }
   }
@@ -84,6 +88,7 @@ class TerminalClient {
     System.out.printf("%-20s%s%n", "get tax", "Information about tax");
     System.out.printf("%-20s%s%n", "set salary [number]", "Set new annual salary");
     System.out.printf("%-20s%s%n", "set tax [number]", "Set new tax percentage");
+    System.out.printf("%-20s%s%n", "back/exit", "Back to main");
     System.out.printf("%-20s%s%n", "help", "Display this text");
   }
 }
