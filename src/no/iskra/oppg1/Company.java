@@ -46,6 +46,6 @@ class Company {
   }
 
   public void removeEmployeeByID(int id) {
-    emplyees.remove(id);
+    this.employees.remove(id);
   }
 }
