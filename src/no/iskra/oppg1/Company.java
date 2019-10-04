@@ -44,4 +44,8 @@ class Company {
   public Employee getEmployeeByID(int id) {
     return employees.get(id);
   }
+
+  public void removeEmployeeByID(int id) {
+    emplyees.remove(id);
+  }
 }
