@@ -1,3 +1,4 @@
+
 package no.iskra.oppg1;
 
 import no.iskra.oppg1.Company;
@@ -27,7 +28,7 @@ class TerminalClient {
       } else if (command[0].equals("id")) {
         try {
           int id = Integer.parseInt(command[1]);
-          employeeDetailsLoop(cmd, company.getEmployeeByID(id));
+          employeeDetailsLoop(cmd, company.getEmployeeByID(id), company);
         } catch(NumberFormatException e) {
           System.out.println("\nMalformed command.");
         } catch(Exception e) {
@@ -47,7 +48,7 @@ class TerminalClient {
     }
   }
 
-  static void employeeDetailsLoop(Scanner cmd, Employee employee) {
+  static void employeeDetailsLoop(Scanner cmd, Employee employee, Company company) {
     String[] command;
     System.out.printf("%nSelected employee %s%n", employee.getFullName());
     employeeDetailsHelp();
@@ -72,6 +73,21 @@ class TerminalClient {
       } else if (command[0].equals("details")) {
         System.out.printf("%n%-11s%s%n", "Full name: ", employee.getFullName());
         System.out.printf("%-11s%d%n", "Birthyear: ", employee.getBirthyear());
+        System.out.printf("%s%d years, since %d%n", "Employed for ", employee.getYearsSinceEmployed(), employee.getEmployeeSince());
+      } else if (command[0].equals("remove")) {
+        company.removeEmployeeByID(employee.getID());
+      } else if (command[0].equals("set")) {
+        try {
+          if (command[1].equals("salary")) {
+            int salary = Integer.parseInt(command[2]);
+
+          } else if (command[1].equals("tax")) {
+            int tax = Integer.parseInt(command[2]);
+
+          }
+        } catch(Exception e) {
+          System.out.println("Malformed command.");
+        }
       }
     }
   }
