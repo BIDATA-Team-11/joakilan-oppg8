@@ -82,7 +82,7 @@ class TerminalClient {
         try {
           if (command[1].equals("salary")) {
             int salary = Integer.parseInt(command[2]);
-
+            employee.setAnnualSalary(salary);
           } else if (command[1].equals("tax")) {
             int tax = Integer.parseInt(command[2]);
 
