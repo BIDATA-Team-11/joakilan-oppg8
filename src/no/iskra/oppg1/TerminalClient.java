@@ -130,6 +130,7 @@ class TerminalClient {
     System.out.printf("%-20s%s%n", "get tax", "Information about tax");
     System.out.printf("%-20s%s%n", "set salary [number]", "Set new annual salary");
     System.out.printf("%-20s%s%n", "set tax [number]", "Set new tax percentage");
+    System.out.printf("%-20s%s%n", "remove employee (cannot be undone)");
     System.out.printf("%-20s%s%n", "back/exit", "Back to main");
     System.out.printf("%-20s%s%n", "help", "Display this text");
   }
